@@ -1,0 +1,12 @@
+<resources>
+
+    <string name="app_name">NewsReader</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_home_screen">News Bot</string>
+    <string name="home_status">Bot Status: Initializing..</string>
+    <string name="home_button_text">Bloomberg News</string>
+    <string name="home_data_source">Data Source: Bloomberg</string>
+    <string name="home_weather_button">Weather</string>
+
+</resources>
