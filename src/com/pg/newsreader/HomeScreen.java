@@ -1,8 +1,6 @@
 package com.pg.newsreader;
 
 
-import java.io.IOException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -16,7 +14,6 @@ import org.jsoup.select.Elements;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
-import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
@@ -24,7 +21,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.speech.tts.TextToSpeech;
 import android.speech.tts.TextToSpeech.OnInitListener;
-import android.speech.tts.UtteranceProgressListener;
 
 //	HTML Parser imports
 
@@ -201,43 +197,6 @@ public class HomeScreen extends Activity implements TextToSpeech.OnInitListener,
 		
 	}
 	
-	public class BotStatus extends Thread
-	{
-		TextView temp= (TextView) findViewById(R.id.home_botstatus);
-		public void run()
-		{
-			System.out.println("in side thread");
-			while(true)
-			{
-				
-				if(tts.isSpeaking())
-				{
-					TextView temp= (TextView) findViewById(R.id.home_botstatus);
-					if(temp.getText().toString().equals("Bot Status: Idle"))
-					{
-						temp.setText("Bot Status: Speaking..");
-					}
-				}
-				else
-				{
-					try {
-						
-						if(temp.getText().toString().equals("Bot Status: Speaking.."))
-						{
-							temp.setText("Bot Status: Idle");
-						}
-						Thread.sleep(5000);
-					} catch (InterruptedException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-				}
-			}
-			
-		}
-		
-	}
-
 	@Override
 	public void onUtteranceCompleted(String utteranceId) {
 		
